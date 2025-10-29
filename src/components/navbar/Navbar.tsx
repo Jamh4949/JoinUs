@@ -1,3 +1,4 @@
+import './Navbar.scss';
 import type { FC } from 'react';
 
 const Navbar: FC = () => {
