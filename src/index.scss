@@ -1,4 +1,4 @@
-@import './styles/mixins.scss';
+@use './styles/mixins' as mixins;
 
 :root{
     --spanish-gray: #969696;
@@ -45,11 +45,11 @@ h1, h2, h3, h4, h5, h6{
     margin-inline: auto;
     padding-inline: 5rem;
 
-    @include respond(tab-land){
+    @include mixins.respond(tab-land){
         padding-inline: 1.5rem;
     }
 
-    @include respond(phone){
+    @include mixins.respond(phone){
         padding-inline: 0.8rem;
     }
 }
