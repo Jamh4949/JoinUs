@@ -10,33 +10,36 @@ type NavLink = {
     href: string;
 };
 
-const NAV_LINKS: NavLink[] = [
+const NAV_LINKS: readonly NavLink[] = [
     { label: 'Inicio', href: '#' },
     { label: 'Sobre Nosotros', href: '#' },
-    { label: 'Servicios', href: '#' },
-    { label: 'Contacto', href: '#' },
-];
+    { label: 'Mapa del Sitio', href: '#' },
+] as const;
 
 const Navbar: FC = () => {
     const [showNav, setShowNav] = useState<boolean>(false);
 
-    const handleToggleNav = () => {
-        setShowNav((prev) => !prev);
+    const handleToggleNav = (): void => {
+        setShowNav((prev: boolean): boolean => !prev);
     };
 
-    const handleCloseNav = () => {
+    const handleCloseNav = (): void => {
         setShowNav(false);
     };
 
     return (
         <header className="navbar">
             <nav className="navbar__container wrapper">
-                <a href="#" className="navbar__logo" onClick={handleCloseNav}>
+                <a 
+                    href="#" 
+                    className="navbar__logo" 
+                    onClick={handleCloseNav}
+                >
                     <img src={Logo} alt="Logo de JoinUs" />
                 </a>
 
                 <ul className={`navbar__links ${showNav ? 'show' : ''}`}>
-                    {NAV_LINKS.map((link) => (
+                    {NAV_LINKS.map((link: NavLink) => (
                         <li key={link.label}>
                             <a href={link.href} onClick={handleCloseNav}>
                                 {link.label}
@@ -46,7 +49,9 @@ const Navbar: FC = () => {
                 </ul>
 
                 <div className="navbar__btns">
-                    <a href="#">Iniciar Sesión</a>
+                    <a href="#" className="navbar__login-btn">
+                        Iniciar Sesión
+                    </a>
                     <a href="#" className="btn">
                         Registrarse
                     </a>

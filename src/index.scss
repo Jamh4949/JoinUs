@@ -1,12 +1,13 @@
 @use './styles/mixins' as mixins;
 
 :root{
-    --spanish-gray: #969696;
+    --black: #000000;
     --cultured: #f6f6f6;
     --soft-black: #151515;
-    --black: #000000;
+    --spanish-gray: #262323;
     --eerie-black: #1b1b1b;
     --black-olive: #383f3e;
+    --gray: #808080;
     --gradient: linear-gradient(to right, #3fe8ab, #78cdcd);
 }
 
@@ -30,6 +31,7 @@ body{
     background-color: var(--eerie-black);
     color: var(--spanish-gray);
     line-height: 1.5;
+    padding-top: 6.5rem;
 }
 
 img{
@@ -58,7 +60,7 @@ h1, h2, h3, h4, h5, h6{
 .btn{
     background: var(--gradient);
     padding: 0.6rem 1.2rem;
-    color: var(--black) !important;
+    color: var(--white) !important;
     border-radius: 0.5rem;
     border: 1px solid transparent;
     font-size: 1.1rem;
