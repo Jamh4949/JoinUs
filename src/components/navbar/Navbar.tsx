@@ -2,18 +2,19 @@ import './Navbar.scss';
 import { IoMenu } from 'react-icons/io5';
 import { IoMdClose } from 'react-icons/io';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/JoinUs.png';
 import type { FC } from 'react';
 
 type NavLink = {
     label: string;
-    href: string;
+    path: string;
 };
 
 const NAV_LINKS: readonly NavLink[] = [
-    { label: 'Inicio', href: '#' },
-    { label: 'Sobre Nosotros', href: '#' },
-    { label: 'Mapa del Sitio', href: '#' },
+    { label: 'Inicio', path: '/' },
+    { label: 'Sobre Nosotros', path: '/about' },
+    { label: 'Mapa del Sitio', path: '/sitemap' },
 ] as const;
 
 const Navbar: FC = () => {
@@ -30,31 +31,31 @@ const Navbar: FC = () => {
     return (
         <header className="navbar">
             <nav className="navbar__container wrapper">
-                <a 
-                    href="#" 
+                <Link 
+                    to="/" 
                     className="navbar__logo" 
                     onClick={handleCloseNav}
                 >
                     <img src={Logo} alt="Logo de JoinUs" />
-                </a>
+                </Link>
 
                 <ul className={`navbar__links ${showNav ? 'show' : ''}`}>
                     {NAV_LINKS.map((link: NavLink) => (
                         <li key={link.label}>
-                            <a href={link.href} onClick={handleCloseNav}>
+                            <Link to={link.path} onClick={handleCloseNav}>
                                 {link.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
 
                 <div className="navbar__btns">
-                    <a href="#" className="navbar__login-btn">
+                    <Link to="/login" className="navbar__login-btn">
                         Iniciar Sesión
-                    </a>
-                    <a href="#" className="btn">
+                    </Link>
+                    <Link to="/register" className="btn">
                         Registrarse
-                    </a>
+                    </Link>
                 </div>
 
                 <button

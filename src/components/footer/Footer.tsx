@@ -1,5 +1,6 @@
 import './Footer.scss';
 import Logo from '../../assets/JoinUs.png';
+import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
@@ -21,15 +22,15 @@ const Footer: FC = () => {
 
         <div className="footer__col">
           <h3>Accede a:</h3>
-          <a href="#">Inicio</a>
-          <a href="#">Sobre Nosotros</a>
-          <a href="#">Mapa del Sitio</a>
+          <Link to="/">Inicio</Link>
+          <Link to="/about">Sobre Nosotros</Link>
+          <Link to="/sitemap">Mapa del Sitio</Link>
         </div>
 
         <div className="footer__col">
           <h3>Opciones del Usuario:</h3>
-          <a href="#">Login</a>
-          <a href="#">Registro</a>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Registro</Link>
           <a href="#">Olvidé mi Contraseña</a>
         </div>
 
