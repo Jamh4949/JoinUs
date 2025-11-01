@@ -7,6 +7,7 @@ import About from './pages/About/About';
 import SiteMap from './pages/SiteMap/SiteMap';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import type { FC } from 'react';
 
 const App: FC = () => {
@@ -20,6 +21,7 @@ const App: FC = () => {
         <Route path="/sitemap" element={<SiteMap />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
       <Footer />
     </Router>
