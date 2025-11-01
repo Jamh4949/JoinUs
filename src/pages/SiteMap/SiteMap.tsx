@@ -25,10 +25,19 @@ const SiteMap: FC = () => {
           </div>
 
           <div className="sitemap__section">
+            <h2>Reuniones</h2>
+            <ul>
+              <li><Link to="/new-meeting">Iniciar Nueva Reunión</Link></li>
+              <li><Link to="/join-meeting">Unirse a Reunión</Link></li>
+            </ul>
+          </div>
+
+          <div className="sitemap__section">
             <h2>Usuario</h2>
             <ul>
               <li><Link to="/login">Iniciar Sesión</Link></li>
               <li><Link to="/register">Registrarse</Link></li>
+              <li><Link to="/profile">Mi Perfil</Link></li>
             </ul>
           </div>
 
@@ -36,7 +45,6 @@ const SiteMap: FC = () => {
             <h2>Recursos</h2>
             <ul>
               <li><a href="#">Manual de Usuario</a></li>
-              <li><a href="#">Política de Privacidad</a></li>
             </ul>
           </div>
         </div>
