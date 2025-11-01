@@ -163,6 +163,29 @@
       &::placeholder {
         color: #a0a0a0;
       }
+
+      &.error {
+        border-color: #ff6b6b;
+
+        &:focus {
+          border-color: #ff6b6b;
+          box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+      }
+    }
+  }
+
+  &__error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: -0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    &::before {
+      content: '⚠';
+      font-size: 1rem;
     }
   }
 
