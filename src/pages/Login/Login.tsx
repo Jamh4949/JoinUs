@@ -188,9 +188,9 @@ const Login: FC = () => {
             </div>
 
             <div className="login__options">
-              <a href="#" className="login__forgot">
+              <Link to="/forgot-password" className="login__forgot">
                 ¿Olvidaste tu contraseña?
-              </a>
+              </Link>
             </div>
 
             <button type="submit" className="btn login__submit">
