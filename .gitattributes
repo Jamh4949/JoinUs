@@ -1,0 +1,16 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Exclude files from linguist language statistics
+*.js linguist-vendored
+*.mjs linguist-language=TypeScript
+dist/** linguist-generated
+node_modules/** linguist-vendored
+package-lock.json linguist-generated
+
+# Mark TypeScript files explicitly
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+
+# Mark SCSS files
+*.scss linguist-language=SCSS

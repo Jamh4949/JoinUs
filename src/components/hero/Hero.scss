@@ -1,0 +1,94 @@
+@use '../../styles/mixins' as mixins;
+
+.hero{
+    background-color: var(--soft-black);
+    padding-block: 5rem;
+
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 3rem;
+        background-image: url('../../assets/blur-bg.png');
+        background-position: center;
+        background-size: 50%;
+        background-repeat: no-repeat;
+
+        @include mixins.respond(tab-port){
+            grid-template-columns: 1fr;
+            text-align: center;
+            background: none;
+        }
+    }
+
+    &__left img{
+        width: 90%;
+        
+        @include mixins.respond(tab-port){
+            width: 80%;
+            margin-inline: auto;
+        }
+    }
+
+    h1{
+        text-transform: capitalize;
+        font-size: 3.3rem;
+        letter-spacing: 1px;
+        font-weight: 600;
+        line-height: 1.2;
+
+        @include mixins.respond(phone){
+            font-size: 2.4rem;
+        }
+    }
+    p{
+        margin-block: 1.5rem 2.5rem;
+        line-height: 1.5;
+        color: var(--cultured);
+    }
+    &__cta{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        @include mixins.respond(tab-port){
+            justify-content: center;
+        }
+    }
+
+    &__cta-alt{
+        color: var(--cultured);
+        font-weight: 300;
+    }
+
+    &__login{
+        display: flex;
+    }
+
+    &__login-btn{
+        position: relative;
+        color: var(--cultured);
+        font-weight: 600;
+        text-transform: capitalize;
+        text-decoration: none;
+        padding-bottom: 0.15rem;
+
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #3fe8ab, #78cdcd);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover::after,
+        &:focus-visible::after{
+            transform: scaleX(1);
+        }
+    }
+}
